@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.10)
 project(simplehttp)
 find_package(OpenSSL REQUIRED)
 add_library(simplehttp STATIC 
-    src/main.cpp
     src/server.cpp
     src/threadpool.cpp
 )
