@@ -10,6 +10,8 @@
 #include <sstream>
 #include <string>
 #include <thread>
+#include <threadpool.hpp>
+namespace simplehttp {
 Server::Server(
     int port, int backlog, int thread_pool_size,
     std::map<std::string, std::function<std::string(std::string_view)>> routes)
@@ -183,3 +185,4 @@ std::string Server::ReadFile(std::string_view path) const {
   buffer << file.rdbuf();
   return buffer.str();
 }
+}  // namespace simplehttp

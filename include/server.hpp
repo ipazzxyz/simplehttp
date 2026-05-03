@@ -4,7 +4,8 @@
 #include <map>
 #include <string>
 #include <string_view>
-#include <threadpool.hpp>
+class ThreadPool;
+namespace simplehttp {
 class Server {
  public:
   Server(int port, int backlog,
@@ -29,3 +30,4 @@ class Server {
   void Send(SSL* ssl, int fd, std::string_view data);
   std::string ReadFile(std::string_view path) const;
 };
+}  // namespace simplehttp
